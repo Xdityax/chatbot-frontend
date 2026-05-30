@@ -33,6 +33,7 @@ import {
 } from 'lucide-react';
 import { io, type Socket } from 'socket.io-client';
 import { AuthContext } from '../../context/AuthContext';
+import { getApiBaseUrl } from '../../services/baseUrl';
 
 type ThemeMode = 'dark' | 'light';
 type AccentKey = 'cyan' | 'violet' | 'emerald';
@@ -75,7 +76,7 @@ type AssistantPreset = {
 
 type StatusTone = 'neutral' | 'success' | 'warning';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = getApiBaseUrl();
 const CHAT_STORAGE_KEY = 'orbynex-chat-ui-preferences';
 const PINNED_STORAGE_KEY = 'orbynex-chat-pinned';
 
